@@ -117,6 +117,9 @@ What are features not supported in Service Portal?
 - What is JSON?
 
 ***ANGULARJS***
+Note: We did not learn AngularJS which is different from Angular.
+I am currently learning AngularJS at https://www.codecademy.com/learn/learn-angularjs
+
 - What is AngularJS? How is it different from Angular 2+?
 - What is scope in AngularJS?
 - What are directives? Mention some of the most commonly used directives in AngularJS application.
