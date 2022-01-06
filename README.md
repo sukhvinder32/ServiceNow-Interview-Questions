@@ -79,16 +79,113 @@
 - What is Form Section?
 
 
-***Service Portal***
-What is diff betw Service Portal and CMS system?
-Can we domain separate Service Portal pages?
-What are the basic components of a service portal?
-What is a widget and what are its components?
-What are pages?
-How to secure service portal page?
-What are features not supported in Service Portal?
+# ***Service Portal***
+## What is diff betw Service Portal and CMS system?
+Service Portal is a compelling alternative to the Content Management System (CMS) with a refined user experience.
+ It does not duplicate CMS or platform UI functionality. Users who have sophisticated experiences delivered through CMS may need to invest time into transitioning to Service Portal, especially if the CMS implementation includes complex and customized Service Catalog forms.
+Service Portal compatibility with existing CMS sites
+ServiceNow continues to support CMS in current and upcoming releases. If you have existing CMS sites and activate Service Portal on your instance, your CMS sites will continue to work, as CMS and Service Portal are separate applications.
+Differences between Service Portal and CMS
+Service Portal is an alternative to CMS based on more modern technologies. Major differences include:
+Underlying technology
+CMS uses Jelly, which is not a widely used technology. 
+Service Portal instead uses AngularJS, server-side JavaScript, HTML, and CSS. Any scripts that use Jelly do not work in Service Portal. Building widgets in Service Portal requires knowledge of AngularJS.
+Visual layer
+CMS uses iFrames which can be difficult to work with, limited in terms of styling, and susceptible to upgrade issues.
+ Alternatively, Service Portal is a self-contained application that accesses data from other tables on the platform. This enables fine-tuned control over style and responsive design.
+Mobile first
+Unlike CMS, Service Portal is optimized for a mobile environment. For this reason, the following apply to the Service Portal environment:
+•	Any scripts used in Service Portal can only use APIs supported in a mobile environment. For example, some APIs used in your Service Catalog client scripts may not be supported. For a list of supported APIs, see Service Portal and client scripts.
+•	Service Portal forms support a maximum of two-columns. As a result, any highly customized Service Catalog forms, such as catalog items and record producers that use containers and variable sets, must be simplified to work in a two-column layout.
+If transitioning to Service Portal, review the following resource: Mobile client GlideForm (g form) scripting and migration.
 
-***JAVASCRIPT***
+## Can we domain separate Service Portal pages?
+NO.
+
+## What are the basic components of a service portal?
+You should have a basic understanding of all the following components that make up a portal:
+•	Themes: Themes define the look and feel of the whole portal, but can be overridden by other style configurations.
+•	Pages: Pages control where and how you store portal content. Pages do not have a defined relationship to portal records, they simply exist.
+•	Widgets: Components in Service Portal are called widgets. You can use HTML templates, CSS, client scripts, server scripts, and any JavaScript dependencies to define what a widget does. From an AngularJS standpoint, widgets are essentially a superset of an Angular directive.
+•	Most of the data in Service Portal is managed in different locations throughout the system.
+For example, if you are building a knowledge portal, the data exists in Service Portal, but the knowledge articles are authored and managed in the Knowledge application. The same is true for any other type of content you plan to leverage. Take time to understand which tables contain and control the data you are working with in Service Portal.
+
+## What is a widget and what are its components?
+Widgets include both mandatory and optional components.
+HTML Template
+The widget's HTML accepts and displays data.
+•	Renders the dynamic view a user sees in the browser using information from the model and controller
+•	Binds client script variables to markup
+•	Gathers data from user inputs like input text, radio buttons, and check boxes
+HTML is mandatory.
+Client Script
+The widget's Client Script defines the AngularJS controller.
+•	Service Portal maps server data from JavaScript and JSON objects to client objects
+•	Processes data for rendering
+•	Passes data to the HTML template
+•	Passes user input and data to the server for processing
+A Client Script is mandatory.
+Server Script
+The widget's Server Script works with record data, web services, and any other data available in ServiceNow server-side scripts.
+•	Sets the initial widget state
+•	Sends data to the widget's Client Script using the data object
+•	Runs server-side queries
+A Server Script is mandatory.
+Link Function
+The Link Function uses AngularJS to directly manipulate the DOM.
+A Link Function is optional.
+Option Schema
+The Option Schema allows a Service Portal Admin (sp_admin role) to configure a widget.
+•	Specifies widget parameters
+•	Allows admin users to define instance options for a widget instance
+•	Makes widgets flexible and reusable
+An Option Schema is optional.
+Angular Providers
+An Angular Provider:
+•	Keeps widgets in sync when changing records or filters
+•	Shares context between widgets
+•	Maintains and persists state
+•	Creates reusable behaviors and UI components then injects them into multiple widgets
+Angular Providers are optional.
+
+## What are pages?
+Use pages to organize content, ensure responsive mobile optimization, and design meaningful portal user experiences for your customers. A page houses containers and rows, which then contain widgets. By manipulating the layout of the page, and the widgets within it, you can construct your desired user experience.
+•	Pages are referenced using the page ID.
+•	Pages can be referenced in more than one portal.
+•	Use base system pages as templates.
+Containers
+Containers are markup artifacts that are put on a page to contain the layouts that house the widgets.
+You can view containers and how they make up a page in the Service Portal Designer (Service Portal > Service Portal Configuration > Designer). 
+
+## How to secure service portal page?
+Control user access to a portal.
+Control who accesses your portal and what they can see in the following ways:
+•	Authentication: Configure login and single sign on for users
+•	Limit page access by role: Use roles to limit the users who can see a page.
+•	Public pages: Use the public check box on a page record to make the page publicly accessible.
+Note: A number of portal pages that are installed by default are marked public. Filter your list of Service Portal pages for Public [is] true to identify these pages. Setting the Public value to false will prevent these pages from being publicly available.
+•	User criteria: For a more advanced way of limiting user access, create and apply user criteria to pages, widgets, widgets instances, and search sources.
+•	Multifactor authentication: If an instance is configured to require multifactor authentication, users are automatically directed to set up multifactor authentication upon initial login. For setup instructions, see Setup multi-factor authentication upon initial login. If multifactor authentication is optional, users can still enable or disable authentication from their user profile. For setup instructions, see Setup multi-factor authentication on your user profile.
+Single sign-on, logins, and URL redirects
+Service Portal uses a combination of system properties and script includes to determine how the system handles URL redirects for users logging in to the portal.
+Configure page security by role
+Set up pages to be public or filter them by role.
+Configure widget security
+Configure widget security to ensure that your widget is being accessed only by the intended audience.
+User criteria for Service Portal
+User criteria enables you to allow access to users based on role, department, group, location, or company. Administrators can control access to pages, widgets, widget instances, announcements, and search sources in a portal by creating and applying user criteria.
+Enable e-signature for Service Portal
+You can configure e-signature in Service Portal to require re-authentication from approving users.
+Enable external user self-registration for Service Portal
+Enable external users to register to a ServiceNow app through Service Portal.
+Register your PIV/CAC card for Service Portal login
+Register your Personal Identity Verification (PIV) or Common Access Card (CAC) card so that you can log in to your organization's portal without entering a password.
+
+## What are features not supported in Service Portal?
+Domain separation
+https://docs.servicenow.com/bundle/rome-servicenow-platform/page/script/client-scripts/reference/r_MobilePlatformMigrationImpacts.html
+
+# ***JAVASCRIPT***
 ## What is JavaScript?
 JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. 
 With the HTML DOM, JavaScript can access and change all the elements of an HTML document.
