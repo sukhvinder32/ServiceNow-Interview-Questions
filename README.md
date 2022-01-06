@@ -89,34 +89,268 @@ How to secure service portal page?
 What are features not supported in Service Portal?
 
 ***JAVASCRIPT***
-- What is JavaScript?
-- What is the DOM? How to manipulate the DOM?
-- What are the JavaScript data types?
-- What is the use of isNaN function?
-- What are undeclared and undefined variables?
-- How can you add new elements dynamically?
-- What are the data types in JS?
-- How can you use functions / different types of functions?
-- What is hoisting?
-- What are the new features of ES6?
-- What are the scopes in JS?
-- What are global variables? How are these variable declared and what are the problems associated with using them?
-- Explain the working of timers in JavaScript? Also discuss the drawbacks of using the timer, if any?
-- What is === operator? Compare with == operator?
-- What is type coercion?
-- Explain how can you submit a form using JavaScript?
-- What is an undefined value in JavaScript?
-- What are some common JavaScript events?
-- Can we add more than one "document.ready()" function in a page?
-- What are the four parameters used for jQuery.ajax method?
-- What is Ajax?
-- What are the advantages of Ajax?
-- What are the disadvantages of Ajax?
-- What are all the controls of Ajax?
-- What are all the technologies (ie. think: protocol) used by Ajax?
-- What is JSON?
+## What is JavaScript?
+JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. 
+With the HTML DOM, JavaScript can access and change all the elements of an HTML document.
 
-***ANGULARJS***
+## What is the DOM? How to manipulate the DOM?
+The HTML DOM (Document Object Model)
+When a web page is loaded, the browser creates a Document Object Model of the page.
+The HTML DOM model is constructed as a tree of Objects:
+
+With the object model, JavaScript gets all the power it needs to create dynamic HTML:
+•	JavaScript can change all the HTML elements in the page
+•	JavaScript can change all the HTML attributes in the page
+•	JavaScript can change all the CSS styles in the page
+•	JavaScript can remove existing HTML elements and attributes
+•	JavaScript can add new HTML elements and attributes
+•	JavaScript can react to all existing HTML events in the page
+•	JavaScript can create new HTML events in the page
+________________________________________________________________________________
+
+
+The DOM is a W3C (World Wide Web Consortium) standard.
+The DOM defines a standard for accessing documents:
+"The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."
+The W3C DOM standard is separated into 3 different parts:
+•	Core DOM - standard model for all document types
+•	XML DOM - standard model for XML documents
+•	HTML DOM - standard model for HTML documents
+________________________________________
+What is the HTML DOM?
+The HTML DOM is a standard object model and programming interface for HTML. It defines:
+•	The HTML elements as objects
+•	The properties of all HTML elements
+•	The methods to access all HTML elements
+•	The events for all HTML elements
+In other words: The HTML DOM is a standard for how to get, change, add, or delete HTML elements.
+
+HTML DOM methods are actions you can perform (on HTML Elements).
+HTML DOM properties are values (of HTML Elements) that you can set or change.
+The getElementById Method
+The most common way to access an HTML element is to use the id of the element.
+In the example above the getElementById method used id="demo" to find the element.
+________________________________________
+The innerHTML Property
+The easiest way to get the content of an element is by using the innerHTML property.
+The innerHTML property is useful for getting or replacing the content of HTML elements.
+The innerHTML property can be used to get or change any HTML element, including <html> and <body>.
+
+
+## What are the JavaScript data types?
+## What are the data types in JS?
+The set of types in the JavaScript language consists of primitive values and objects.
+•	Primitive values (immutable datum represented directly at the lowest level of the language)
+o	Boolean type
+o	Null type
+o	Undefined type
+o	Number type
+o	BigInt type
+o	String type
+o	Symbol type
+•	Objects (collections of properties)
+
+
+## What is the use of isNaN function?
+In JavaScript NaN is short for "Not-a-Number".
+The isNaN() method returns true if a value is NaN.
+The isNaN() method converts the value to a number before testing it.
+
+## What is an undefined value in JavaScript?
+## What are undeclared and undefined variables?
+Undeclared − It occurs when a variable which hasn’t been declared using var, let or const is being tried to access.
+
+Undefined − It occurs when a variable has been declared using var, let or const but isn’t given a value.
+
+
+## How can you add new elements dynamically?
+The document.createElement() creates a new HTML element.
+The document.createTextNode() creates a text node.
+The appendChild() method appends dynamic element to body or target element.
+The document.querySelector() allows to select desired element using any valid selector.
+
+## How can you use functions / different types of functions?
+Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value, but for a procedure to qualify as a function, it should take some input and return an output where there is some obvious relationship between the input and the output. To use a function, you must define it somewhere in the scope from which you wish to call it.
+
+## What is hoisting?
+JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+Hoisting allows functions to be safely used in code before they are declared.
+Variable and class declarations are also hoisted, so they too can be referenced before they are declared. Note that doing so can lead to unexpected errors, and is not generally recommended.
+
+## What are the new features of ES6?
+Let
+Const
+For…of
+Template literals
+Default values for function parameters
+Arrow functions
+Ciasses
+Modules
+Rest parameter
+Spread operator
+Destructuring assignment
+
+
+## What are the scopes in JS?
+Before ES6 (2015), JavaScript had only Global Scope and Function Scope.
+ES6 introduced two important new JavaScript keywords: 
+let and const.
+These two keywords provide Block Scope in JavaScript.
+Variables declared inside a { } block cannot be accessed from outside the block:
+
+Variables declared with the var keyword can NOT have block scope.
+Variables declared inside a { } block can be accessed from outside the block.
+Local Scope
+Variables declared within a JavaScript function, become LOCAL to the function.
+Local variables have Function Scope:
+They can only be accessed from within the function.
+JavaScript has function scope: Each function creates a new scope.
+Variables defined inside a function are not accessible (visible) from outside the function.
+Variables declared with var, let and const are quite similar when declared inside a function.
+They all have Function Scope:
+
+
+## What are global variables? How are these variable declared and what are the problems associated with using them?
+
+
+Global JavaScript Variables
+A variable declared outside a function, becomes GLOBAL.
+A global variable has Global Scope:
+All scripts and functions on a web page can access it. 
+
+Global Scope
+Variables declared Globally (outside any function) have Global Scope.
+Global variables can be accessed from anywhere in a JavaScript program.
+Variables declared with var, let and const are quite similar when declared outside a block.
+They all have Global Scope:
+
+## Explain the working of timers in JavaScript? Also discuss the drawbacks of using the timer, if any?
+Timers are used to execute a piece of code at a set time or also to repeat the code in a given interval of time. This is done by using the functions setTimeout, setInterval and clearInterval.
+The setTimeout(function, delay) function is used to start a timer that calls a particular function after the mentioned delay. The setInterval(function, delay) function is used to repeatedly execute the given function in the mentioned delay and only halts when cancelled. The clearInterval(id) function instructs the timer to stop.
+Timers are operated within a single thread, and thus events might queue up, waiting to be executed.
+The setTimeout() and setInterval() are both methods of the HTML DOM Window object.
+
+## What is === operator? Compare with == operator?
+=== equal value and type
+== equal value / may not be same type
+
+## What is type coercion?
+Type coercion is the process of converting value from one type to another (such as string to number, object to boolean, and so on). Any type, be it primitive or an object, is a valid subject for type coercion. To recall, primitives are: number, string, boolean, null, undefined + Symbol (added in ES6).
+
+## Explain how can you submit a form using JavaScript?
+
+Set the name attribute of your form to "theForm" 
+JavaScript provides the form object that contains the submit() method. Use the ‘id’ of the form to get the form object.
+For example, if the name of your form is ‘myform’, the JavaScript code for the submit call is:
+document.forms["myform"].submit();
+But, how to identify a form? Give an id attribute in the form tag
+Here is the code to submit a form when a hyperlink is clicked:
+<form name="myform" action="handle-data.php">
+Search: <input type='text' name='query' />
+<a href="javascript: submitform()">Search</a>
+</form>
+<script type="text/javascript">
+function submitform()
+{
+  document.myform.submit();
+}
+</script>
+
+
+
+
+## What are some common JavaScript events?
+An HTML event can be something the browser does, or something a user does.
+Here are some examples of HTML events:
+•	An HTML web page has finished loading
+•	An HTML input field was changed
+•	An HTML button was clicked
+
+
+## Can we add more than one "document.ready()" function in a page?
+You can have multiple ones, but it's not always the neatest thing to do. Try not to overuse them, as it will seriously affect readability. Other than that , it's perfectly legal. See the below:
+http://www.learningjquery.com/2006/09/multiple-document-ready
+
+
+## What are the four parameters used for jQuery.ajax method?
+The ajax() method is used to perform an AJAX (asynchronous HTTP) request.
+All jQuery AJAX methods use the ajax() method. This method is mostly used for requests where the other methods cannot be used.
+Parameter values
+This method can have several name/value pairs for the AJAX requests. The names and values are defined in the following table.
+Async
+beforeSend
+cache
+complete
+url
+...
+
+## What is Ajax?
+AJAX = Asynchronous JavaScript And XML.
+AJAX is not a programming language.
+AJAX just uses a combination of:
+•	A browser built-in XMLHttpRequest object (to request data from a web server)
+•	JavaScript and HTML DOM (to display or use the data)
+
+
+## What are the advantages of Ajax?
+•	Allows applications to render without data and fill data as the application gets it from the server.
+•	Gives platform independence to application developers
+•	Faster page renders
+•	More responsive applications
+•	No rerenders of whole pages are needed to update only a single area.
+
+
+•	Update a web page without reloading the page
+•	Request data from a server - after the page has loaded
+•	Receive data from a server - after the page has loaded
+•	Send data to a server - in the background
+
+
+## What are the disadvantages of Ajax?
+•	Any user whose browser does not support JavaScript or XMLHttpRequest, or has this functionality disabled, will not be able to properly use pages that depend on Ajax.
+•	Multiple server requests need more data consumed at the client-side.
+•	Failure of any one request can fail the load of the whole page.
+•	Browsers with JS disabled will not be able to use pages using ajax.
+
+
+## What are all the controls of Ajax?
+
+The keystone of AJAX is the XMLHttpRequest object.
+
+The important properties of the XMLHttpRequest object are given below.
+o	onReadyStateChange - It is called whenever readystate attribute changes.
+o	readyState - It represents the state of the request.
+o	responseText - It returns response as text.
+o	responseXML - It returns response as XML.
+o	status - It returns the status number of a request.
+o	statusText - It returns the details of status.
+
+ important methods of XMLHttpRequest?
+o	abort() - It is used to cancel the current request.
+o	getAllResponseHeaders() - It returns the header details.
+o	getResponseHeader() - It returns the specific header details.
+o	open() - It is used to open the request.
+o	send() - It is used to send the request.
+o	setRequestHeader() - It adds request header.
+
+
+## What are all the technologies (ie. think: protocol) used by Ajax?
+HTML/XHTML and CSS - These technologies are used for displaying content and style.
+DOM - It is used for dynamic display and interaction with data.
+XML - It is used for carrying data to and from server
+XMLHttpRequest - It is used for asynchronous communication between client and server.
+JavaScript - It is used mainly for client-side validation
+
+## What is JSON?
+Javascript object notation
+ it is language and platform independent.
+ is a syntax for exchanging and storing the data. It is language independent data format and an open standard file format. It is mainly based on the Javascript
+•	Data is in name/value pairs
+•	Data is separated by comma
+•	Curly brackets hold objects
+•	Square bracket holds arrays
+
+# ***ANGULARJS***
 Note: We did not learn AngularJS which is different from Angular.
 I am currently learning AngularJS at https://www.codecademy.com/learn/learn-angularjs
 
